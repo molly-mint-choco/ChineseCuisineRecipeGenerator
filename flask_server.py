@@ -27,7 +27,7 @@ def detect():
 def recipe_geneartor():
     if 'photo' not in request.files:
         return jsonify({'error': 'No photo uploaded'}), 400
-    
+        
     photo = request.files['photo']
     photo_path = os.path.join('/tmp', photo.filename)
     photo.save(photo_path)
@@ -36,7 +36,7 @@ def recipe_geneartor():
     
     try:
         recipe_details = ingredient_assistant(photo_path, additional_instructions)
-        return jsonify(recipe_details)
+        return jsonify({"recipe":recipe_details})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     finally:

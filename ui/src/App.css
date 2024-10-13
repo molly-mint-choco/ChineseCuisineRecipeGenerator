@@ -1,0 +1,27 @@
+/* App.css */
+
+/* Basic styles for the app */
+.app-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .app-header {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

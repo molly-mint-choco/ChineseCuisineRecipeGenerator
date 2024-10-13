@@ -1,2 +1,3 @@
 .DS_Store
 photo_detect/__pycache__/
+ui/node_modules/

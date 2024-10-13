@@ -39,18 +39,19 @@ def ingredient_assistant(photo_path, additional_instructions = None):
         thread_id=thread.id,
         assistant_id=assistant_id)
 
-    tool_call_id = run.required_action.submit_tool_outputs.tool_calls[0].id
-    
-    run = client.beta.threads.runs.submit_tool_outputs(
-        thread_id=thread.id,
-        run_id=run.id,
-        tool_outputs=[
-            {
-                "tool_call_id": tool_call_id,
-                "output": "Success"
-            }
-        ]
-    )
+    if run.required_action and run.required_action.submit_tool_outputs:
+        tool_call_id = run.required_action.submit_tool_outputs.tool_calls[0].id
+        run = client.beta.threads.runs.submit_tool_outputs(
+            thread_id=thread.id,
+            run_id=run.id,
+            tool_outputs=[
+                {
+                    "tool_call_id": tool_call_id,
+                    "output": "Success"
+                }
+            ]
+        )
+
     print(run)
     while (run.status != 'completed'):
         time.sleep(3)
