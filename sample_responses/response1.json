@@ -1,0 +1,48 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "msg_VncaEmah0lImXIbZKbiHV2Pg",
+      "object": "thread.message",
+      "created_at": 1728817115,
+      "assistant_id": "asst_tn5aAWvaHQvrtfHEXfKFKNop",
+      "thread_id": "thread_omPygS9GaLTqDkZ3cURgpP86",
+      "run_id": "run_tOzT2iOTKIZsoLLbci1s69uj",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": {
+            "value": "- **Ingredients**:\n  - Fish (Mackerel)\n  - Chicken (Drumsticks)\n  - Red meat (Beef)\n  - Eggs\n  - Tomatoes (Cherry and regular)\n  - Lemon\n  - Red onion\n  - Purple cabbage\n  - Lettuce\n  - Green beans\n  - Corn\n  - Red chili peppers\n  - Bell peppers\n\n- **Recipe**: Mediterranean Mixed Grill with Fresh Veggie Salad\n  - **Ingredients**:\n    - 2 Mackerel fish, cleaned\n    - 4 chicken drumsticks\n    - 300g beef slices\n    - 4 eggs\n    - 1 large red onion, sliced\n    - 2 cups cherry tomatoes, halved\n    - 1 lemon, sliced\n    - 1 cup purple cabbage, sliced\n    - 1 head of lettuce, torn into pieces\n    - 200g green beans, trimmed\n    - 2 ears of corn, cut into chunks\n    - 2 red chili peppers, sliced\n    - 1 bell pepper, sliced\n    - 4 tbsp olive oil\n    - Salt and pepper to taste\n    - Fresh herbs (e.g., rosemary, parsley) for garnish\n  \n  - **Preparation Steps**:\n    1. **Prepare the Grill**:\n       - Preheat your grill to medium-high heat.\n       - Brush the mackerel, chicken drumsticks, and beef slices with olive oil and season with salt and pepper.\n       - Grill each item: Chicken for about 20-25 minutes until cooked through, mackerel for 5-7 minutes per side, and beef for about 3-5 minutes per side for medium doneness.\n  \n    2. **Boil the Eggs**:\n       - Place the eggs in a saucepan, cover with water, and bring to a boil.\n       - Once boiling, remove from heat, cover, and let sit for 10-12 minutes. Cool and peel.\n\n    3. **Prepare the Vegetables**:\n       - In a large bowl, combine lettuce, cherry tomatoes, sliced red onion, sliced purple cabbage, sliced bell peppers, and green beans.\n       - Toss with a drizzle of olive oil, salt, pepper, and lemon juice.\n\n    4. **Cook the Corn and Chili Peppers**:\n       - Boil corn in salted water for 10-12 minutes until tender. Alternatively, grill alongside the meats for a charred flavor.\n       - Add a splash of olive oil and grill the red chili peppers until slightly charred.\n\n    5. **Assemble and Serve**:\n       - Arrange the grilled meats and fish on a platter with lemon slices scattered over.\n       - Serve with the salad on the side, garnished with fresh herbs, and include the boiled eggs and corn on the platter.\n       - Enjoy as a hearty, colorful, and flavorful Mediterranean feast.",
+            "annotations": []
+          }
+        }
+      ],
+      "attachments": [],
+      "metadata": {}
+    },
+    {
+      "id": "msg_b2M705Mge04A87iT9gMFBS1e",
+      "object": "thread.message",
+      "created_at": 1728817043,
+      "assistant_id": null,
+      "thread_id": "thread_omPygS9GaLTqDkZ3cURgpP86",
+      "run_id": null,
+      "role": "user",
+      "content": [
+        {
+          "type": "image_file",
+          "image_file": {
+            "file_id": "file-UboMq3YN9yrPvFlYKeyMADgf",
+            "detail": "auto"
+          }
+        }
+      ],
+      "attachments": [],
+      "metadata": {}
+    }
+  ],
+  "first_id": "msg_VncaEmah0lImXIbZKbiHV2Pg",
+  "last_id": "msg_b2M705Mge04A87iT9gMFBS1e",
+  "has_more": false
+}
