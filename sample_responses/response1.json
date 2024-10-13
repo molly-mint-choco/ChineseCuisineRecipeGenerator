@@ -2,12 +2,12 @@
   "object": "list",
   "data": [
     {
-      "id": "msg_VncaEmah0lImXIbZKbiHV2Pg",
+      "id": "msg_id2",
       "object": "thread.message",
       "created_at": 1728817115,
       "assistant_id": "asst_tn5aAWvaHQvrtfHEXfKFKNop",
-      "thread_id": "thread_omPygS9GaLTqDkZ3cURgpP86",
-      "run_id": "run_tOzT2iOTKIZsoLLbci1s69uj",
+      "thread_id": "thread_id",
+      "run_id": "run_id",
       "role": "assistant",
       "content": [
         {
@@ -22,18 +22,18 @@
       "metadata": {}
     },
     {
-      "id": "msg_b2M705Mge04A87iT9gMFBS1e",
+      "id": "msg_id1",
       "object": "thread.message",
       "created_at": 1728817043,
       "assistant_id": null,
-      "thread_id": "thread_omPygS9GaLTqDkZ3cURgpP86",
+      "thread_id": "thread_id",
       "run_id": null,
       "role": "user",
       "content": [
         {
           "type": "image_file",
           "image_file": {
-            "file_id": "file-UboMq3YN9yrPvFlYKeyMADgf",
+            "file_id": "file_id",
             "detail": "auto"
           }
         }
@@ -42,7 +42,7 @@
       "metadata": {}
     }
   ],
-  "first_id": "msg_VncaEmah0lImXIbZKbiHV2Pg",
-  "last_id": "msg_b2M705Mge04A87iT9gMFBS1e",
+  "first_id": "msg_id1",
+  "last_id": "msg_id2",
   "has_more": false
 }
