@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
+import Modal from 'react-modal'
+
+const modalStyle = { 
+  content: { backgroundColor: 'white', border: 'solid 1px #ccc', borderRadius: '5px', width: '200px', height: '100px', margin: 'auto' }
+}
 
 function App() {
   const [photo, setPhoto] = useState(null);
   const [instructions, setInstructions] = useState('');
   const [recipe, setRecipe] = useState('');
+  const [isFetching, setIsFetching] = useState(false);
 
   const handlePhotoChange = (event) => {
     setPhoto(event.target.files[0]);
@@ -16,6 +22,7 @@ function App() {
   };
 
   const handleSubmit = async () => {
+    setIsFetching(true);
     const formData = new FormData();
     formData.append('photo', photo);
     formData.append('additional_instructions', instructions);
@@ -26,12 +33,15 @@ function App() {
           'Content-Type': 'multipart/form-data',
         },
       });
+      console.log(response)
       setRecipe(response.data.recipe); // Assuming response contains { recipe: "...markdown formatted string..." }
     } catch (error) {
       console.error('Error fetching recipe', error);
+    } finally {
+      setIsFetching(false);
     }
   };
-
+console.log(recipe)
   return (
     <div style={styles.container}>
       <h1 style={styles.header}>What Can I Cook Today?</h1>
@@ -54,6 +64,11 @@ function App() {
       <div style={styles.resultSection}>
         {recipe && <ReactMarkdown>{recipe}</ReactMarkdown>}
       </div>
+      <Modal isOpen={isFetching} style={modalStyle}>
+        <div style={{margin:'auto'}}>
+          Generating recipe...
+        </div>
+      </Modal>
     </div>
   );
 }
