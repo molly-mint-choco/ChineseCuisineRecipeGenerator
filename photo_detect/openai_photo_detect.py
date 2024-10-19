@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 import time
+from image_gen.openai_recipe_image_gen import recipe_image_gen
 
 def ingredient_assistant(photo_path, additional_instructions = None):
     load_dotenv()
@@ -40,17 +41,20 @@ def ingredient_assistant(photo_path, additional_instructions = None):
         assistant_id=assistant_id)
 
     if run.required_action and run.required_action.submit_tool_outputs:
-        tool_call_id = run.required_action.submit_tool_outputs.tool_calls[0].id
-        run = client.beta.threads.runs.submit_tool_outputs(
-            thread_id=thread.id,
-            run_id=run.id,
-            tool_outputs=[
-                {
-                    "tool_call_id": tool_call_id,
-                    "output": "Success"
-                }
-            ]
-        )
+        for tool_call in run.required_action.submit_tool_outputs.tool_calls:
+            tool_call_id = tool_call.id
+            run = client.beta.threads.runs.submit_tool_outputs(
+                thread_id=thread.id,
+                run_id=run.id,
+                tool_outputs=
+                [
+                    {
+                        "tool_call_id": tool_call_id,
+                        "output": "Success"
+                    }
+                ]
+            )
+        
 
     print(run)
     while (run.status != 'completed'):
@@ -63,7 +67,10 @@ def ingredient_assistant(photo_path, additional_instructions = None):
         print(messages)
         for message in messages.data:
             if message.role == 'assistant':
-                return message.content[0].text.value
+                recipe_text = message.content[0].text.value
+                recipe_image_url = recipe_image_gen(openai_api_key, recipe_text)
+                return {"recipe": recipe_text, "image_url": recipe_image_url}
+
     else:
         print(run.status)
         return "Error in messages."

@@ -14,17 +14,20 @@
   "author": "molly",
   "license": "ISC",
   "dependencies": {
+    "@nextui-org/modal": "^2.0.41",
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/spinner": "^2.0.34",
     "axios": "^1.7.7",
+    "dropzone": "^6.0.0-beta.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-dropzone": "^14.2.10",
     "react-markdown": "^7.1.0",
     "react-modal": "^3.16.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "vfile": "^6.0.3",
     "vfile-message": "^4.0.2",
-    "vfile-reporter": "^8.1.1",
-    "@nextui-org/modal": "^2.0.41",
-    "@nextui-org/spinner": "^2.0.34"
+    "vfile-reporter": "^8.1.1"
   },
   "browserslist": {
     "production": [

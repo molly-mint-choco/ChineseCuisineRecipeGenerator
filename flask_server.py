@@ -36,7 +36,7 @@ def recipe_geneartor():
     
     try:
         recipe_details = ingredient_assistant(photo_path, additional_instructions)
-        response = jsonify({"recipe":recipe_details})
+        response = jsonify(recipe_details)
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as e:
