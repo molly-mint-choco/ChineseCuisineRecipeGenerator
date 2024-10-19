@@ -12,6 +12,7 @@ function App() {
   const [instructions, setInstructions] = useState('');
   const [recipe, setRecipe] = useState('');
   const [isFetching, setIsFetching] = useState(false);
+  const [imageUrl, setImageUrl] = useState('');
 
   const handlePhotoChange = (event) => {
     setPhoto(event.target.files[0]);
@@ -35,6 +36,8 @@ function App() {
       });
       console.log(response)
       setRecipe(response.data.recipe); // Assuming response contains { recipe: "...markdown formatted string..." }
+      setImageUrl(response.data.image_url);
+
     } catch (error) {
       console.error('Error fetching recipe', error);
     } finally {
@@ -64,6 +67,17 @@ console.log(recipe)
       <div style={styles.resultSection}>
         {recipe && <ReactMarkdown>{recipe}</ReactMarkdown>}
       </div>
+      {imageUrl && (
+      <div className="image-container">
+        <img 
+          src={imageUrl} 
+          alt="recipe image" 
+          className="generated-image"
+          style={{width: '50%', height: 'auto'}}
+        />
+      </div>
+)}
+
       <Modal isOpen={isFetching} style={modalStyle}>
         <div style={{margin:'auto'}}>
           Generating recipe...
@@ -115,7 +129,7 @@ const styles = {
   resultSection: {
     marginTop: '30px',
     textAlign: 'left',
-  },
+  }
 };
 
 export default App;
